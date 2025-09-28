@@ -19,6 +19,7 @@ if (!isset($_SESSION['admin_user'])) {
             <li><a href="categories.php">Manage Categories</a></li>
             <li><a href="languages.php">Manage Languages</a></li>
             <li><a href="stories.php">Manage Stories</a></li>
+            <li><a href="change_password.php">Change Password</a></li>
             <!-- More links will be added here -->
         </ul>
         <a href="logout.php">Logout</a>

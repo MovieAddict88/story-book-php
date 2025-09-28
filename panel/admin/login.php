@@ -15,7 +15,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($stmt->num_rows > 0) {
         $stmt->fetch();
-        if (password_verify($password, $hashed_password)) {
+        $login_successful = false;
+        // Check if the stored password is a valid hash
+        if (isset($hashed_password) && password_get_info($hashed_password)['algo']) {
+            if (password_verify($password, $hashed_password)) {
+                $login_successful = true;
+            }
+        } else {
+            // Otherwise, treat it as a plain-text password
+            if ($password === $hashed_password) {
+                $login_successful = true;
+            }
+        }
+
+        if ($login_successful) {
             $_SESSION['admin_user'] = $username;
             $_SESSION['admin_id'] = $id;
             header("Location: dashboard.php");
