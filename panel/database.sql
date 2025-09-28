@@ -57,6 +57,9 @@ CREATE TABLE `admin_users` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- Insert default admin user
+INSERT INTO `admin_users` (`username`, `password`) VALUES ('admin', 'admin');
+
 CREATE TABLE `kid_profiles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
