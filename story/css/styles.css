@@ -1,0 +1,114 @@
+:root {
+    --pastel-blue: #A2D2FF;
+    --pastel-pink: #FFC8DD;
+    --pastel-purple: #CDB4DB;
+    --pastel-green: #BDE0FE;
+    --white: #ffffff;
+    --black: #333333;
+}
+
+body {
+    font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial, sans-serif;
+    margin: 0;
+    background-color: var(--pastel-green);
+    color: var(--black);
+}
+
+header {
+    background-color: var(--pastel-blue);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.filters {
+    margin-top: 15px;
+}
+
+select {
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid var(--pastel-purple);
+    font-size: 1em;
+    margin: 0 10px;
+}
+
+#story-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.story-card {
+    background-color: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.story-card:hover {
+    transform: scale(1.05);
+}
+
+.story-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.story-card h3 {
+    margin: 0;
+    padding: 15px;
+    background-color: var(--pastel-pink);
+    text-align: center;
+}
+
+/* Story Viewer Styles */
+#story-viewer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    overflow-y: auto;
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#close-viewer {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--pastel-purple);
+    color: var(--white);
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#story-content img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+#story-content p {
+    font-size: 1.5em;
+    line-height: 1.6;
+}
+
+.hidden {
+    display: none;
+}
